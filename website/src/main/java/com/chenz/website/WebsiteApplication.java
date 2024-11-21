@@ -3,8 +3,9 @@ package com.chenz.website;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.chenz")
 @EnableDiscoveryClient
 public class WebsiteApplication {
 

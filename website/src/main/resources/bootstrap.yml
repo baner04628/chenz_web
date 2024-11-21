@@ -19,11 +19,12 @@ spring:
         enabled: true
         server-addr: localhost:8848
         namespace: web
-        file-extension: yml
+        file-extension: yaml
         refresh-enabled: true
         shared-configs:
-          - data-id: ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+          - data-id: website-dev.yml
             refresh: true
+        group: DEFAULT_GROUP
 
 chenz:
   log:
