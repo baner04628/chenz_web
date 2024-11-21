@@ -1,0 +1,31 @@
+server:
+  port: 9001
+  servlet:
+    # http://127.0.0.1:9001/website-service/doc.html#/home
+    context-path: /website-service
+
+spring:
+  application:
+    name: website
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: localhost:8848
+        namespace: web
+      config:
+        enabled: true
+        server-addr: localhost:8848
+        namespace: web
+        file-extension: yml
+        refresh-enabled: true
+        shared-configs:
+          - data-id: ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+            refresh: true
+
+chenz:
+  log:
+    dir: ./log
+    level: info
